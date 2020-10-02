@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../usuario';
+import { MockdataService } from '../mockdata.service'
 
 @Component({
 	selector: 'app-usuarios',
@@ -9,15 +9,17 @@ import { Usuario } from '../usuario';
 
 export class UsuariosComponent implements OnInit {
 
-	usuario: Usuario = {
-		name: "Eduardo Santos",
-		id: 1001,
-		username: "@eduardo.santos"
-	};
+	usuarioSelecionado: any;
 
-	constructor() { }
+	constructor(public mockdataService: MockdataService) { }
 
 	ngOnInit(): void {
+		console.log(this.mockdataService.mockData);
+	}
+
+	onSelect(u: any): void {
+		this.usuarioSelecionado = u;
+		console.log(this.usuarioSelecionado);
 	}
 
 }

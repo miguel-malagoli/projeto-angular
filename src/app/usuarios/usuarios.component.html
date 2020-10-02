@@ -1,3 +1,9 @@
-<h2>{{usuario.name | uppercase}}</h2>
-<div><span>id: </span>{{usuario.id}}</div>
-<div><span>username: </span>{{usuario.username}}</div>
+<ul class="usuarios">
+    <li class="usuarios__item" *ngFor="let u of this.mockdataService.mockData" (click)="onSelect(u)">
+        <img class="usuarios__foto"
+            [src]="u.img"
+            alt="Foto do usuário"
+        >
+        <span>{{u.id}}</span> {{u.name}}
+    </li>
+</ul>
