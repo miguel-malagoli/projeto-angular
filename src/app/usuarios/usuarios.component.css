@@ -1,10 +1,42 @@
 .usuarios {
     padding: 0;
-    margin-left: 25vw;
-    width: 50vw;
-    border: 1px solid red;
+    margin: 10vw 0 8vw 27vw;
+    width: 46vw;
+    transition: margin .6s ease-in-out;
+}
+.usuarios_esquerda {
+    margin: 10vw 0 8vw 4vw;
 }
 
 .usuarios__item {
-    display: block;
+    background-image: linear-gradient(45deg, green, greenyellow);
+    margin-bottom: .75em;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    padding-right: 2vw;
+    box-shadow: 0px 2px 4px rgba(128, 128, 128, 0.5);
+}
+
+.usuarios__foto {
+    min-height: 100%;
+}
+
+.usuarios__info {
+    margin-left: 1vw;
+    flex-grow: 1;
+    color: white;
+}
+
+.usuarios__nome {
+    font-size: 1.5vw;
+    margin: 0 0 .25em;
+    text-transform: uppercase;
+}
+
+.usuarios__dados {
+    font-size: 1.2vw;
+    margin: 0;
 }

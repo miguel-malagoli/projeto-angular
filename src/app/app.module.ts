@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
-import { MockdataService } from './mockdata.service'
+import { MockdataService } from './mockdata.service';
+import { PagamentoComponent } from './pagamento/pagamento.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,

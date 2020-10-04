@@ -9,17 +9,14 @@ import { MockdataService } from '../mockdata.service'
 
 export class UsuariosComponent implements OnInit {
 
-	usuarioSelecionado: any;
-
 	constructor(public mockdataService: MockdataService) { }
 
 	ngOnInit(): void {
 		console.log(this.mockdataService.mockData);
 	}
 
-	onSelect(u: any): void {
-		this.usuarioSelecionado = u;
-		console.log(this.usuarioSelecionado);
+	select(u: Object): void {
+		this.mockdataService.selectData(u);
+		console.log(this.mockdataService.selectedData);
 	}
-
 }
