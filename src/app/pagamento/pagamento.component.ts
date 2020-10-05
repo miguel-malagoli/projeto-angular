@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockdataService } from '../mockdata.service';
 
 @Component({
   selector: 'app-pagamento',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagamentoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public mockdataService: MockdataService) { }
 
   ngOnInit(): void {
   }

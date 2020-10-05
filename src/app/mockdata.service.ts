@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,12 @@ import { HttpClient } from '@angular/common/http'
 export class MockdataService {
 
 	public mockData = [];
-	public selectedData: Object;
+	public selectedData: Usuario = {
+		name: "",
+		id: 0,
+		img: "",
+		username: ""
+	};
 	private apiURL = "https://www.mocky.io/v2/5d531c4f2e0000620081ddce";
 
 	constructor(private http: HttpClient) { }
@@ -22,7 +28,7 @@ export class MockdataService {
 			}
 		);
 	}
-	selectData(u: Object): void {
+	selectData(u: Usuario): void {
 		this.selectedData = u;
 	}
 }
