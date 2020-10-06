@@ -17,6 +17,10 @@ body {
     border-radius: 9999px;
     padding: 4px 1.1em 4px 4px;
     cursor: pointer;
+    transition: filter .4s;
+}
+.botao:disabled {
+    filter: grayscale(100%);
 }
 
 .botao__imagem {

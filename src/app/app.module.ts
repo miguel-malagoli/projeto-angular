@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { PagamentoComponent } from './pagamento/pagamento.component';
 
 import { MockdataService } from './mockdata.service';
-import { PagamentoComponent } from './pagamento/pagamento.component'
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { PagamentoComponent } from './pagamento/pagamento.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MockdataService],
   bootstrap: [AppComponent]

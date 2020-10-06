@@ -1,12 +1,16 @@
-.pagamento {
+.pagamento__dados {
     position: fixed;
     top: 10vw;
-    right: 4vw;
+    right: -42vw;
     width: 42vw;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.5);
     background-color: white;
+    transition: right .6s ease-in-out;
+}
+.pagamento__dados_revelado {
+    right: 4vw;
 }
 
 .pagamento__usuario {
@@ -43,8 +47,8 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     border: 1px solid grey;
-    padding: .25em 0;
-    width: 20vw;
+    padding: .25em .5vw;
+    width: 19.25vw;
 }
 
 .pagamento__seleçao {
@@ -54,4 +58,29 @@
     margin-bottom: 2vw;
     width: 23.5vw;
     text-overflow: ellipsis;
+}
+
+.pagamento__resultado {
+    background-image: linear-gradient(45deg, green, greenyellow);
+    position: fixed;
+    top: 28vw;
+    right: 4vw;
+    width: 42vw;
+    display: flex;
+    align-items: center;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.pagamento__imagem {
+    height: 4vw;
+    fill: white;
+}
+
+.pagamento__texto {
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    font-size: 1.3vw;
 }
