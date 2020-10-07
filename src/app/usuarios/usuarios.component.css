@@ -1,12 +1,18 @@
 /* Lista de usuários */
 .usuarios {
     padding: 0;
-    margin: 10vw 0 8vw 27vw;
-    width: 46vw;
+    margin: 120px 4vw;
+    width: 92vw;
     transition: margin .6s ease-in-out;
 }
-.usuarios_esquerda {
-    margin: 10vw 0 8vw 4vw;
+@media only screen and (min-width: 1200px) {
+    .usuarios {
+        width: 46vw;
+        margin: 10vw 0 8vw 27vw;
+    }
+    .usuarios_esquerda {
+        margin: 10vw 0 8vw 4vw;
+    }
 }
 /* Item da lista de usuários */
 .usuarios__item {
@@ -14,7 +20,7 @@
     margin-bottom: .75em;
     border-radius: 12px;
     overflow: hidden;
-    height: 8vw;
+    height: 160px;
     display: flex;
     align-items: center;
     padding-right: 2vw;
@@ -25,24 +31,56 @@
 .usuarios__item_apagado {
     filter: grayscale(100%);
 }
+@media only screen and (min-width: 1200px) {
+    .usuarios__item {
+        height: 8vw;
+    }
+}
 /* Imagem do usuário */
 .usuarios__foto {
     min-height: 100%;
+}
+/* Flex secundário, irrelevante na versão desktop mas importante para a responsividade */
+.usuarios__flex-mobile {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 /* Bloco de informações do usuário */
 .usuarios__info {
     margin-left: 1vw;
     flex-grow: 1;
     color: white;
+    width: 100%;
+    text-align: center;
+}
+@media only screen and (min-width: 1200px) {
+    .usuarios__info {
+        width: auto;
+        text-align: left;
+    }
 }
 /* nome do usuário */
 .usuarios__nome {
-    font-size: 1.5vw;
+    font-size: 20px;
     margin: 0 0 .25em;
     text-transform: uppercase;
 }
+@media only screen and (min-width: 1200px) {
+    .usuarios__nome {
+        font-size: 1.5vw;
+    }
+}
 /* ID e username do usuário */
 .usuarios__dados {
-    font-size: 1.2vw;
-    margin: 0;
+    font-size: 12px;
+    margin: 0 0 1.5em;
+}
+@media only screen and (min-width: 1200px) {
+    .usuarios__dados {
+        font-size: 1.2vw;
+        margin: 0;
+    }
 }

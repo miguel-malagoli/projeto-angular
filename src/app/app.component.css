@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 6vw;
+    height: 92px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,21 +13,32 @@
     box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.5);
     z-index: 1;
 }
+@media only screen and (min-width: 1200px) {
+    .topo {
+        height: 6vw;
+    }
+}
 /* Logo à esquerda */
 .topo__logo {
+    height: 60%;
     display: flex;
     align-items: center;
 }
 /* SVG do logo */
 .topo__escudo {
-    height: 1.8vw;
+    height: 65%;
     fill: green;
 }
 /* Texto do logo */
 .topo__nome {
-    font-size: 1.6vw;
+    font-size: 22px;
     font-weight: 800;
     margin-left: .25em;
+}
+@media only screen and (min-width: 1200px) {
+    .topo__nome {
+        font-size: 1.6vw;
+    }
 }
 /* Parte verde do texto */
 .topo__way {

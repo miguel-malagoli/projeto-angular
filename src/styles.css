@@ -8,7 +8,7 @@ body {
 .botao {
     font-family: Helvetica;
     text-transform: uppercase;
-    font-size: 1.1vw;
+    font-size: 20px;
     font-weight: 600;
     color: white;
     display: flex;
@@ -20,15 +20,25 @@ body {
     cursor: pointer;
     transition: filter .4s;
 }
+@media only screen and (min-width: 1200px) {
+    .botao {
+        font-size: 1.1vw;
+    }
+}
 .botao:disabled {
     filter: grayscale(100%);
 }
 /* SVG do botão */
 .botao__imagem {
-    margin-right: .5vw;
+    margin-right: .5em;
     background-color: greenyellow;
     border-radius: 50%;
     padding: .5vw;
-    height: 1.5vw;
+    height: 24px;
     fill: green;
+}
+@media only screen and (min-width: 1200px) {
+    .botao__imagem {
+        font-size: 1.5vw;
+    }
 }
