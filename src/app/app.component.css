@@ -1,3 +1,4 @@
+/* Header fixo no topo da página */
 .topo {
     position: fixed;
     top: 0;
@@ -12,27 +13,27 @@
     box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.5);
     z-index: 1;
 }
-
+/* Logo à esquerda */
 .topo__logo {
     display: flex;
     align-items: center;
 }
-
+/* SVG do logo */
 .topo__escudo {
     height: 1.8vw;
     fill: green;
 }
-
+/* Texto do logo */
 .topo__nome {
     font-size: 1.6vw;
     font-weight: 800;
     margin-left: .25em;
 }
-
+/* Parte verde do texto */
 .topo__way {
     color: green;
 }
-
+/* Restante da página */
 .corpo {
     width: 100%;
 }

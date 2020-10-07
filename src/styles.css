@@ -1,9 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Remoção da margem padrão e seleção da fonte da página */
 body {
     margin: 0;
     font-family: Helvetica;
 }
 
+/* --------------------------- Bloco "Botão" -------------------------- */
 .botao {
     font-family: Helvetica;
     text-transform: uppercase;
@@ -22,7 +23,7 @@ body {
 .botao:disabled {
     filter: grayscale(100%);
 }
-
+/* SVG do botão */
 .botao__imagem {
     margin-right: .5vw;
     background-color: greenyellow;

@@ -1,3 +1,4 @@
+/* Lista de usuários */
 .usuarios {
     padding: 0;
     margin: 10vw 0 8vw 27vw;
@@ -7,7 +8,7 @@
 .usuarios_esquerda {
     margin: 10vw 0 8vw 4vw;
 }
-
+/* Item da lista de usuários */
 .usuarios__item {
     background-image: linear-gradient(45deg, green, greenyellow);
     margin-bottom: .75em;
@@ -24,23 +25,23 @@
 .usuarios__item_apagado {
     filter: grayscale(100%);
 }
-
+/* Imagem do usuário */
 .usuarios__foto {
     min-height: 100%;
 }
-
+/* Bloco de informações do usuário */
 .usuarios__info {
     margin-left: 1vw;
     flex-grow: 1;
     color: white;
 }
-
+/* nome do usuário */
 .usuarios__nome {
     font-size: 1.5vw;
     margin: 0 0 .25em;
     text-transform: uppercase;
 }
-
+/* ID e username do usuário */
 .usuarios__dados {
     font-size: 1.2vw;
     margin: 0;

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { MockdataService } from './mockdata.service';
 
 @Component({
@@ -11,8 +10,10 @@ export class AppComponent {
 
 	title = 'Projeto Angular';
 
+	// Construtor com serviço mockdata
 	constructor(private mockService: MockdataService) {}
 	ngOnInit() {
+		// Iniciar serviço
 		this.mockService.getMockData();
 	}
 }

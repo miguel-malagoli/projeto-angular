@@ -8,20 +8,24 @@ import { TransactionPayload } from '../transactionPayload';
 	templateUrl: './pagamento.component.html',
 	styleUrls: ['./pagamento.component.css']
 })
+// Componente de pagamento
 export class PagamentoComponent implements OnInit {
 
+	// Variável usada como formulário
 	dados;
+	// Variável usada para formatar o valor do input
 	quantiaInput = "";
 
+	// Construtor com o serviço mockdata
 	constructor(public mockdataService: MockdataService) { }
-
+	// Inicializar o formulário
 	ngOnInit(): void {
 		this.dados = new FormGroup({
 			quantia: new FormControl("", Validators.required),
 			cartao: new FormControl("", Validators.required)
 		})
 	}
-
+	// Função chamada pelo botão "Confirmar Pagamento", manda os dados do pagamento para o servidor
 	confirmarPagamento(valores) {
 		let payload: TransactionPayload = {
 			card_number: this.mockdataService.mockCard[valores.cartao].card_number,
@@ -32,19 +36,18 @@ export class PagamentoComponent implements OnInit {
 		}
 		console.log(payload);
 		this.mockdataService.postData(payload);
-
+		// Resetar o formulário após pagamento
 		this.dados = new FormGroup({
 			quantia: new FormControl("", Validators.required),
 			cartao: new FormControl("", Validators.required)
 		});
 		this.quantiaInput = "";
 	}
-
+	// Função que formata o input da quantia sempre que ocorre o evento "input"
 	formatarValor(e) {
-		console.log(e.target.value);
 
 		let novoValor = e.target.value;
-
+		// Forçar duas casas decimais e trocar o "." por ","
 		novoValor = novoValor.replace(/[^0-9]/g, '');
 		novoValor = (parseInt(novoValor) / 100).toString();
 		if(novoValor.search(/[.]/) === -1) {
@@ -53,8 +56,7 @@ export class PagamentoComponent implements OnInit {
 			novoValor += "0";
 		}
 		novoValor = novoValor.replace(/[.]/, ',');
-
-		let temp = novoValor;
+		// Inserir "." a cada 3 dígitos após a vírgula
 		let contador = 0;
 		for(let i = novoValor.length - 4; i > 0; i--) {
 			contador++;

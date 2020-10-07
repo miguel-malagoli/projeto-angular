@@ -1,3 +1,4 @@
+/* Bloco de pagamento, fixo à direita e revelado apenas quando um usuário é selecionado */
 .pagamento {
     position: fixed;
     top: 10vw;
@@ -15,7 +16,7 @@
 .pagamento::-webkit-scrollbar {
     display: none;
 }
-
+/* Janela de formulario do pagamento */
 .pagamento__dados {
     position: relative;
     right: -46vw;
@@ -30,7 +31,7 @@
 .pagamento__dados_revelado {
     right: 0vw;
 }
-
+/* Topo da janela, com o nome do usuário selecionado */
 .pagamento__usuario {
     width: 100%;
     text-align: center;
@@ -40,14 +41,14 @@
     padding: .75em;
     box-sizing: border-box;
 }
-
+/* Formulário da janela */
 .pagamento__box {
     display: flex;
     flex-flow: column;
     align-items: center;
     padding: 1.5vw;
 }
-
+/* "R$" ao lado do input da quantia */
 .pagamento__reais {
     background-image: linear-gradient(45deg, green, greenyellow);
     padding-left: .5em;
@@ -58,7 +59,7 @@
     font-weight: 700;
     margin-bottom: .5vw;
 }
-
+/* Input da quantia */
 .pagamento__input {
     font-size: 1.5vw;
     text-align: right;
@@ -68,7 +69,7 @@
     padding: .25em .5vw;
     width: 19.25vw;
 }
-
+/* Dropdown de seleção de cartão */
 .pagamento__seleçao {
     font-size: 1.5vw;
     border-radius: 12px;
@@ -77,7 +78,7 @@
     width: 23.5vw;
     text-overflow: ellipsis;
 }
-
+/* Segunda parte do bloco, contém feedback da transação e só é revelada após realizado o pagamento */
 .pagamento__resultado {
     background-image: linear-gradient(45deg, green, greenyellow);
     position: relative;
@@ -96,12 +97,12 @@
 .pagamento__resultado_reprovado {
     background-image: linear-gradient(45deg, red, orangered);
 }
-
+/* SVG do resultado */
 .pagamento__imagem {
     height: 4vw;
     fill: white;
 }
-
+/* Texto do resultado */
 .pagamento__texto {
     flex-grow: 1;
     text-align: center;
