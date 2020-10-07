@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuario';
+import { TransactionPayload } from './transactionPayload';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,9 @@ export class MockdataService {
 		img: "",
 		username: ""
 	};
+	public endpointResponse;
 	private apiURL = "https://www.mocky.io/v2/5d531c4f2e0000620081ddce";
+	private endpointURL = "https://run.mocky.io/v3/533cd5d7-63d3-4488-bf8d-4bb8c751c989";
 
 	public mockCard = [
 		{
@@ -31,9 +34,6 @@ export class MockdataService {
 
 	constructor(private http: HttpClient) { }
 
-	sayHi() {
-		console.log("hai");
-	}
 	getMockData() {
 		this.http.get(this.apiURL).subscribe(
 			(data) => {
@@ -42,6 +42,22 @@ export class MockdataService {
 		);
 	}
 	selectData(u: Usuario): void {
-		this.selectedData = u;
+		if (this.selectedData.id != 0) {
+			this.selectedData = {
+				name: "",
+				id: 0,
+				img: "",
+				username: ""
+			};
+		} else {
+			this.selectedData = u;
+		}
+	}
+	postData(postData: TransactionPayload) {
+		this.http.post(this.endpointURL, postData).subscribe(
+			(data) => {
+				this.endpointResponse = data;
+			}
+		);
 	}
 }

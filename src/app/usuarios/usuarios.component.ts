@@ -18,6 +18,6 @@ export class UsuariosComponent implements OnInit {
 
 	select(u: Usuario): void {
 		this.mockdataService.selectData(u);
-		console.log(this.mockdataService.selectedData);
+		this.mockdataService.endpointResponse = undefined;
 	}
 }

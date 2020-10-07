@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MockdataService } from '../mockdata.service';
+import { TransactionPayload } from '../transactionPayload';
 
 @Component({
 	selector: 'app-pagamento',
@@ -22,7 +23,21 @@ export class PagamentoComponent implements OnInit {
 	}
 
 	confirmarPagamento(valores) {
-		console.log(valores);
+		let payload: TransactionPayload = {
+			card_number: this.mockdataService.mockCard[valores.cartao].card_number,
+			cvv: this.mockdataService.mockCard[valores.cartao].cvv,
+			expiry_date: this.mockdataService.mockCard[valores.cartao].expiry_date,
+			destination_user_id: this.mockdataService.selectedData.id,
+			value: parseInt(valores.quantia.replace(/[^0-9]/g, '')) / 100
+		}
+		console.log(payload);
+		this.mockdataService.postData(payload);
+
+		this.dados = new FormGroup({
+			quantia: new FormControl("", Validators.required),
+			cartao: new FormControl("", Validators.required)
+		});
+		this.quantiaInput = "";
 	}
 
 	formatarValor(e) {

@@ -1,16 +1,34 @@
-.pagamento__dados {
+.pagamento {
     position: fixed;
     top: 10vw;
-    right: -42vw;
+    right: 4vw;
+    max-height: calc(100vh - 12vw);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    pointer-events: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.pagamento_revelado {
+    pointer-events: all;
+}
+.pagamento::-webkit-scrollbar {
+    display: none;
+}
+
+.pagamento__dados {
+    position: relative;
+    right: -46vw;
     width: 42vw;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.5);
     background-color: white;
     transition: right .6s ease-in-out;
+    margin-bottom: 2vw;
 }
 .pagamento__dados_revelado {
-    right: 4vw;
+    right: 0vw;
 }
 
 .pagamento__usuario {
@@ -62,15 +80,21 @@
 
 .pagamento__resultado {
     background-image: linear-gradient(45deg, green, greenyellow);
-    position: fixed;
-    top: 28vw;
-    right: 4vw;
+    position: relative;
+    right: -46vw;
     width: 42vw;
     display: flex;
     align-items: center;
     padding: 1.5vw;
     box-sizing: border-box;
     border-radius: 12px;
+    transition: right .6s ease-in-out;
+}
+.pagamento__resultado_revelado {
+    right: 0vw;
+}
+.pagamento__resultado_reprovado {
+    background-image: linear-gradient(45deg, red, orangered);
 }
 
 .pagamento__imagem {
